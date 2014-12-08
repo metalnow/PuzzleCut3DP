@@ -9,11 +9,11 @@
 
 include <puzzlecutlib.scad>
 
-stampSize = [500,500,100];		//size of cutting stamp (should cover 1/2 of object)
+stampSize = [1500,1500,1000];		//size of cutting stamp (should cover 1/2 of object)
 
 cutSize = 4;	//size of the puzzle cuts
 
-xCut1 = [-18 ,-6, 4]; //locations of puzzle cuts relative to X axis center
+xCut1 = [-45, -35, -35, -25 ,-15, -5, , 5, 15, 25, 35, 45]; //locations of puzzle cuts relative to X axis center
 yCut1 = [-4, 5, 16];	//for Y axis
 
 kerf = -0.3;		//supports +/- numbers (greater value = tighter fit)
@@ -21,17 +21,18 @@ kerf = -0.3;		//supports +/- numbers (greater value = tighter fit)
 					//using positive values useful for lasercutting
 					//negative values can also help visualize cuts without seperating pieces
 
-//cutInTwo();	//cuts in two along y axis
-cutInFour();	//cuts in four along x / y axis
+
+cutInTwo();	//cuts in two along y axis
+//cutInFour();	//cuts in four along x / y axis
 
 //comment out lines as needed to render individual pieces
 
 module cutInTwo()
 {
-	translate([0,-6,0])
+	translate([0,-10,0])
 		xMaleCut() drawOcto();
 
-	translate([0,0,0])
+	translate([0,10,0])
 		xFemaleCut() drawOcto();
 }
 
@@ -53,5 +54,10 @@ module cutInFour()
 
 module drawOcto()
 {
-	rotate ([0,0,16]) import("OctopusThickLegs.stl");
+	translate([-50,0,0]) rotate ([90,0,90]) 
+	import("zendome_3d_mainframe.stl");
+
+	translate([0,-35,0]) rotate ([90,0,90]) 
+	import("zendome_3d_nexus_7_Plate.stl");
+
 }
