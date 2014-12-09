@@ -46,6 +46,34 @@ module yFemaleCut(offset = 0, cut = yCut1)
 }
 
 
+module ZMaleCut(offset = 0, cut = zCut1)
+{
+	intersection()
+	{
+		difference()
+		{
+			difference()
+			{
+				cube(stampSize, center = true);	
+				rotate ([0,90,90]) translate([0,offset,0]) makePuzzleStamp(cutLocations = cut);
+			}
+			//make the cube
+			translate ([stampSize[0] / 2 - kerf,0,0])
+				cube (stampSize, center = true);
+		}
+		child(0);
+	}
+}
+
+
+module ZFemaleCut(offset = 0, cut = zCut1)
+{
+	intersection()
+	{
+		child(0);	
+		rotate ([-90,90,0]) translate([0,offset,0]) makePuzzleStamp(cutLocations = cut);
+	}
+}
 
 module makePuzzleStamp(kerf = 0)
 {
