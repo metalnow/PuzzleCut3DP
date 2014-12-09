@@ -29,10 +29,10 @@ cutInTwo();	//cuts in two along y axis
 
 module cutInTwo()
 {
-	translate([0,-10,0])
+	translate([0,0,0])
 		xMaleCut() drawOcto();
 
-	translate([0,10,0])
+	rotate ([0,0,0]) translate([0,-55,20])
 		xFemaleCut() drawOcto();
 }
 
@@ -54,10 +54,10 @@ module cutInFour()
 
 module drawOcto()
 {
-	translate([-50,0,0]) rotate ([90,0,90]) 
-	import("zendome_3d_mainframe.stl");
+//	translate([-50,0,0]) rotate ([90,0,90]) 
+//	import("zendome_3d_mainframe.stl");
 
-	translate([0,-35,0]) rotate ([90,0,90]) 
+	translate([0,-60,0]) rotate ([90,0,90]) 
 	import("zendome_3d_nexus_7_Plate.stl");
 
 }
