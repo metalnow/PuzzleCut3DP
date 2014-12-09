@@ -32,10 +32,10 @@ cutInFour();	//cuts in four along x / y axis
 //comment out lines as needed to render individual pieces
 module cutInTwo()
 {
-	translate([0,-10,0])
+	translate([0,0,0])
 		xMaleCut() drawOcto();
 
-	translate([0,10,0])
+	rotate ([0,0,0]) translate([0,-55,20])
 		xFemaleCut() drawOcto();
 }
 
@@ -66,7 +66,6 @@ module drawObj()
 	translate([-74,0,0]) rotate ([90,0,90]) 
 	import("zendome_3d_mainframe.stl");
 
-//	translate([0,-35,0]) rotate ([90,0,90]) 
-//	import("zendome_3d_nexus_7_Plate.stl");
-
+	translate([0,-60,0]) rotate ([90,0,90]) 
+	import("zendome_3d_nexus_7_Plate.stl");
 }
