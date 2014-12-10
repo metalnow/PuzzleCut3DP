@@ -86,10 +86,19 @@ module makePuzzleStamp(kerf = 0)
 		//make the cuts
 		for ( i = cutLocations )
 		{
-			translate([i,0,0])
+			if ( kerf == 0)
+			{
+				translate([i,0,0])
+				cube ([cutSize, cutSize, stampSize[2]], center = true);
+			}
+			else
+			{
+				translate([i,0,0])
 				cube ([(cutSize / 2) - kerf * 2, cutSize - kerf * 2,stampSize[2]], center = true);
-			translate([i,cutSize / 2,0])
+
+				translate([i,cutSize / 2,0])
 				cube ([cutSize - kerf *  2,(cutSize / 2) - kerf * 2, stampSize[2]], center = true);
+			}
 		}		
 	}
 }

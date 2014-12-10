@@ -18,7 +18,7 @@ yCut1 = [-80, -60, -40, -20, 20, 40, 60, 80];	//for Y axis
 
 zCut1 = [-15, -5, 5, 15];	//for Z axis
 
-kerf = -0.3;		//supports +/- numbers (greater value = tighter fit)
+kerf = 0;		//supports +/- numbers (greater value = tighter fit)
 					//using a small negative number may be useful to assure easy fit for 3d printing
 					//using positive values useful for lasercutting
 					//negative values can also help visualize cuts without seperating pieces
@@ -41,24 +41,22 @@ module cutInTwo()
 
 module cutInFour()
 {
-
+/*
 	translate([5,-10,0])
 		xMaleCut() yMaleCut() drawObj();
-
-	translate([5,-10,0])
-		xMaleCut() ZMaleCut() drawObj();
+	//translate([5,-10,0])
+	//	xMaleCut() ZMaleCut() drawObj();
 
 	translate([5,10,0])
 		xFemaleCut() yMaleCut() drawObj();
-
-	translate([5,10,0])
-		xFemaleCut() ZMaleCut() drawObj();
-
+	//translate([5,10,0])
+	//	xFemaleCut() ZMaleCut() drawObj();
 	translate([-5,-10,0])
 		xMaleCut() yFemaleCut() ZFemaleCut() drawObj();
-
+*/
 	translate([-5,10,0])
 		xFemaleCut() yFemaleCut() ZFemaleCut() drawObj();
+
 }
 
 module drawObj()
