@@ -16,7 +16,7 @@ cutSize = 4;	//size of the puzzle cuts
 xCut1 = [-65, -55, -45, -35, -35, -25 ,-15, -5, 5, 15]; //locations of puzzle cuts relative to X axis center
 yCut1 = [-80, -60, -40, -20, 20, 40, 60, 80];	//for Y axis
 
-zCut1 = [-15, -5, 5, 15];	//for Z axis
+//zCut1 = [-15, -5, 5, 15];	//for Z axis
 
 kerf = 0;		//supports +/- numbers (greater value = tighter fit)
 					//using a small negative number may be useful to assure easy fit for 3d printing
